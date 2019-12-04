@@ -14,7 +14,7 @@ console.log({ commitsArray });
 
 const currentChangelog = fs.readFileSync("./CHANGELOG.md", "utf-8");
 const currentVersion = Number(require("./package.json").version);
-const newVersion = currentVersion + 1;
+const newVersion = (currentVersion + 1);
 
 let newChangelog = `# Version ${newVersion} (${
   new Date().toISOString().split("T")[0]
@@ -69,4 +69,4 @@ child.execSync('git add .');
 child.execSync(`git commit -m "[FEATURE]: Bump to version ${newVersion}"`);
 
 // tag the commit
-child.execSync(`git tag v${newVersion}`);
+child.execSync(`git tag v0.0.${newVersion}`);
