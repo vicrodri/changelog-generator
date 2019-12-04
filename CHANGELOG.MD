@@ -1,3 +1,8 @@
+# Version v0.0.4 (2019-12-04)
+
+## Features
+* [FEATURE] añadido prueba.txt ([70cb31])
+
 # Version v0.0.3 (2019-12-04)
 
 ## Features
