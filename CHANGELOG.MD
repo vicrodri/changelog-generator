@@ -1,3 +1,11 @@
+# Version v0.0.5 (2019-12-04)
+
+## Features
+* [FEATURE] añado tututu.txt ([def3a8])
+
+## Fixes
+* [FIX] prueba 2 ([f0fbf5])
+
 # Version v0.0.4 (2019-12-04)
 
 ## Features
