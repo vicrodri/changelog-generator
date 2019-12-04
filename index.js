@@ -2,7 +2,7 @@ const child = require('child_process');
 const fs = require("fs");
 
 const latestTag = child.execSync('git describe --tags').toString('utf-8').split('-')[0];
-const output = child.execSync(`git log --format=%B%H----DELIMITER----`).toString('utf-8');
+const output = child.execSync(`git log ${latestTag}..HEAD --format=%B%H----DELIMITER----`).toString('utf-8');
 
 const commitsArray = output.split('----DELIMITER----\n').map(commit => {
   const [message, sha] = commit.split('\n');
@@ -16,7 +16,7 @@ const currentChangelog = fs.readFileSync("./CHANGELOG.md", "utf-8");
 const currentVersion = Number(require("./package.json").version);
 const newVersion = (currentVersion + 1);
 
-let newChangelog = `# Version ${newVersion} (${
+let newChangelog = `# Version v0.0.${newVersion} (${
   new Date().toISOString().split("T")[0]
 })\n\n`;
 
